@@ -1,0 +1,113 @@
+Yalidine Retour Management System V2
+====================================
+
+Root Directory
+├── .env                              # Environment variables (Supabase credentials)
+├── .gitignore                        # Git ignore patterns
+├── CHANGELOG.md                      # Version history
+├── PROJECT_STRUCTURE.md              # Detailed structure documentation
+├── README.md                         # Project overview and quick start
+├── REORGANIZATION_SUMMARY.md         # Reorganization details
+├── FILE_TREE.txt                     # This file
+├── index.html                        # HTML entry point
+├── package.json                      # Dependencies and scripts
+├── package-lock.json                 # Locked dependency versions
+├── eslint.config.js                  # ESLint configuration
+├── postcss.config.js                 # PostCSS configuration
+├── tailwind.config.js                # Tailwind CSS configuration
+├── tsconfig.json                     # TypeScript root config
+├── tsconfig.app.json                 # TypeScript app config
+├── tsconfig.node.json                # TypeScript Node config
+├── vite.config.ts                    # Vite bundler config
+├── yalidine-logo.svg                 # Company logo
+│
+├── docs/                             # Documentation
+│   ├── IMPLEMENTATION_SUMMARY.md     # Complete technical details
+│   └── SETUP_GUIDE.md               # Setup and deployment guide
+│
+├── public/                           # Static assets
+│   ├── sounds/                      # UI sound effects
+│   │   ├── success.mp3              # Success sound
+│   │   └── error.mp3                # Error sound
+│   └── yalidine-logo.svg            # Logo (copy)
+│
+├── src/                             # Source code
+│   ├── App.tsx                      # Main app component
+│   ├── main.tsx                     # Application entry point
+│   ├── index.css                    # Global styles (Tailwind)
+│   ├── vite-env.d.ts               # Vite type declarations
+│   │
+│   ├── components/                  # React components
+│   │   ├── AddParcel.tsx           # Add parcel (QR/manual)
+│   │   ├── Boxes.tsx               # Box CRUD operations
+│   │   ├── ClearParcels.tsx        # Clear/archive parcels (unused)
+│   │   ├── Dashboard.tsx           # Main dashboard with stats
+│   │   ├── DonnerRetours.tsx       # Return parcels to boutiques
+│   │   ├── Login.tsx               # Authentication page
+│   │   ├── PrintBox.tsx            # Print-friendly box list
+│   │   ├── Search.tsx              # Search parcels (unused)
+│   │   ├── Statistics.tsx          # Charts and statistics
+│   │   ├── StockControl.tsx        # Stock management & export
+│   │   ├── WarehouseSelector.tsx   # Warehouse switcher dropdown
+│   │   │
+│   │   └── admin/                  # Admin-only components
+│   │       ├── Users.tsx           # User management
+│   │       └── Warehouses.tsx      # Warehouse management
+│   │
+│   ├── contexts/                    # React contexts
+│   │   ├── AuthContext.tsx         # Authentication state
+│   │   └── WarehouseContext.tsx    # Warehouse selection state
+│   │
+│   ├── hooks/                       # Custom React hooks
+│   │   ├── useSound.ts             # Sound effects
+│   │   └── useWarehouseFilter.ts   # Warehouse filtering
+│   │
+│   ├── lib/                         # Third-party integrations
+│   │   └── supabase.ts             # Supabase client config
+│   │
+│   ├── types/                       # TypeScript types
+│   │   └── database.ts             # Database schema types
+│   │
+│   └── utils/                       # Utility functions
+│       └── wilaya.ts               # Algerian wilaya mapping
+│
+└── supabase/                        # Supabase related files
+    └── migrations/                  # Database migrations
+        ├── 20260228125649_create_parcel_stock_tables.sql
+        ├── 20260301131933_expand_parcel_fields.sql
+        ├── 20260303031849_create_warehouse_multitenancy_system.sql
+        ├── 20260303032346_set_warehouse_id_not_null_constraints.sql
+        ├── 20260303032511_create_initial_super_admin.sql
+        ├── 20260303_add_given_to_boutique_fields.sql
+        └── 20260304_add_utf8mb4_support.sql
+
+
+File Categories
+===============
+
+Configuration Files (Root):
+- .env, .gitignore
+- package.json, package-lock.json
+- eslint.config.js, postcss.config.js, tailwind.config.js
+- tsconfig.*.json, vite.config.ts
+
+Documentation (Root + docs/):
+- README.md, CHANGELOG.md, PROJECT_STRUCTURE.md
+- REORGANIZATION_SUMMARY.md, FILE_TREE.txt
+- docs/IMPLEMENTATION_SUMMARY.md, docs/SETUP_GUIDE.md
+
+Source Code (src/):
+- 12 Components (10 main + 2 admin)
+- 2 Contexts (Auth, Warehouse)
+- 2 Hooks (Sound, WarehouseFilter)
+- 1 Lib (Supabase client)
+- 1 Types (Database schema)
+- 1 Utils (Wilaya mapping)
+
+Database (supabase/):
+- 7 SQL migration files
+
+Total TypeScript Files: 19
+Total Documentation Files: 7
+Total Configuration Files: 11
+Total SQL Migration Files: 7
